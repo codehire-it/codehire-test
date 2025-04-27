@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CodeHire Premium</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background: rgb(8,146,208);
+background: linear-gradient(159deg, rgba(8,146,208,1) 0%, rgba(75,0,130,1) 100%);
+        color: white;
+        padding: 20px;
+      }
+      header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      header h1 {
+        font-size: 28px;
+        color: #facc15;
+      }
+      header p {
+        color: #ccc;
+        font-size: 14px;
+        margin-top: 10px;
+      }
+      .card {
+        background: #111827;
+        border-radius: 16px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        transition: transform 0.3s;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+      }
+      .card h2 {
+        font-size: 20px;
+        color: #6366f1;
+        margin-bottom: 10px;
+      }
+      .card ul {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 10px;
+      }
+      .card ul li {
+        margin-bottom: 8px;
+        font-size: 14px;
+      }
+      .price {
+        font-weight: bold;
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+      .btn-upgrade {
+        display: inline-block;
+        width: 100%;
+        background: linear-gradient(90deg, #6366f1, #8b5cf6);
+        color: white;
+        padding: 12px;
+        border-radius: 10px;
+        text-align: center;
+        font-weight: bold;
+        text-decoration: none;
+        transition: background 0.3s, transform 0.3s;
+      }
+      .btn-upgrade:hover {
+        background: linear-gradient(90deg, #7c3aed, #6366f1);
+        transform: scale(1.05);
+      }
+      .bottom-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #0e1025;
+        border-top: 1px solid #444;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 60px;
+        z-index: 99;
+      }
+
+      .nav-item {
+        text-align: center;
+        font-size: 12px;
+        color: #aaa;
+      }
+
+      .nav-item.active {
+        color: #6366f1;
+      }
+
+      .nav-item i {
+        display: block;
+        font-size: 20px;
+        margin-bottom: 2px;
+      }
+
+      .upload-button {
+        background: #7c3aed;
+        color: white;
+        font-size: 24px;
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: -25px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      }
+
+      
+.info-bebas-iklan {
+  margin-top: 20px;
+  margin-bottom: 80px; /* supaya ada jarak dari bottom nav */
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 13px;
+  color: #e0e0e0;
+  text-align: left;
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.2 );
+}
+
+.info-bebas-iklan strong {
+  color: #ffffff;
+}
+
+      /* Desktop Sidebar Menu */
+      .nav-desktop-only {
+        display: none;
+      }
+
+     
+
+    </style>
+  </head>
+
+  <body>
+
+    <body>
+
+        <!-- Tombol Back -->
+        <a href="klien.html" style="position: absolute; top: 20px; left: 20px; color: white; font-size: 20px; text-decoration: none;">
+          <i class="fas fa-arrow-left"></i>
+        </a>
+        
+        <header style="margin-top: 40px;">
+          <h1>🚀 CodeHire Premium</h1>
+          <p>Tingkatkan akunmu dan dapatkan fitur eksklusif!</p>
+        </header>
+
+    <div class="card">
+      <h2>Untuk Freelancer</h2>
+      <ul>
+        <li>✅ Boost layanan ke halaman utama</li>
+        <li>✅ Lencana "Terverifikasi"</li>
+        <li>✅ Tambahkan portofolio lebih banyak</li>
+        <li>✅ Lihat statistik profil & tayangan</li>
+      </ul>
+      <p class="price">Rp 50.000 / bulan</p>  
+      <a href="upgrade.html" class="btn-upgrade">Upgrade ke Freelancer Pro</a>
+
+    </div>
+
+    <div class="card">
+      <h2>Untuk Klien</h2>
+      <ul>
+        <li>✅ Posting proyek privat (freelancer terpilih)</li>
+        <li>✅ Riwayat proyek & pencarian tersimpan</li>
+        <li>✅ Branding perusahaan & logo</li>
+        <li>✅ Tim support prioritas</li>
+      </ul>
+      <p class="price">Rp 75.000 / bulan</p>
+      <a href="https://wa.me/62895322714966?text=Halo,%20saya%20ingin%20upgrade%20Klien%20Elite%20di%20CodeHire" class="btn-upgrade" target="_blank">Upgrade ke Klien Elite</a>
+    </div>
+
+    <!-- Glass Info Box -->
+  <div class="info-bebas-iklan">
+    <p><strong>Bebas Iklan:</strong> Rp 15.000 - 25.000 / bulan</p>
+    <p><strong>Diskon:</strong> Hemat Rp 150.000 per tahun dibanding bayar Rp 15.000 x 12 bulan!</p>
+  </div>
+</div>
+
+    <nav class="bottom-nav">
+      <a href="freelancer.html" class="nav-item" style="text-decoration: none"><i class="fas fa-home"></i>Beranda</a>
+      <div class="nav-item"><i class="fas fa-box"></i>Pesanan</div>
+      <div class="upload-button"><i class="fas fa-plus"></i></div>
+      <div class="nav-item"><i class="fas fa-wallet"></i>Dompet</div>
+      <a href="profil.html" class="nav-item" style="text-decoration: none"><i class="fas fa-user"></i>Profil</a>
+    </nav>
+  </body>
+</html>

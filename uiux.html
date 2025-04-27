@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Development</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(180deg, #0d0d2b, #20204a);
+        color: white;
+        padding: 20px;
+        padding-bottom: 90px; /* Tambahin ini */
+      }
+
+      /* Loading Screen */
+      #loading {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: #0d0d2b;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
+      .loader {
+        border: 6px solid #f3f3f3;
+        border-top: 6px solid #6366f1;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      /* Header */
+      header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+      header i {
+        font-size: 24px;
+        cursor: pointer;
+      }
+      header h1 {
+        font-size: 22px;
+      }
+      /* Service Cards */
+      .service-card {
+        background: #111827;
+        border-radius: 16px;
+        overflow: hidden;
+        margin-bottom: 20px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .service-card:hover {
+        transform: scale(1.03);
+        box-shadow: 0px 6px 16px rgba(99, 102, 241, 0.5);
+      }
+      .service-card img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+        transition: transform 0.5s;
+      }
+      .service-card:hover img {
+        transform: scale(1.05);
+      }
+      .service-info {
+        padding: 16px;
+        position: relative;
+      }
+      .service-info h2 {
+        font-size: 18px;
+        margin-bottom: 8px;
+      }
+      .service-info p {
+        font-size: 14px;
+        color: #ccc;
+        margin-bottom: 8px;
+      }
+      .price-time {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+        margin-bottom: 12px;
+      }
+      .btn-pesan {
+        background: linear-gradient(90deg, #6366f1, #8b5cf6);
+        color: white;
+        padding: 10px;
+        border-radius: 8px;
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        font-weight: bold;
+        transition: background 0.3s, transform 0.3s;
+      }
+      .btn-pesan:hover {
+        background: linear-gradient(90deg, #7c3aed, #6366f1);
+        transform: scale(1.05);
+      }
+
+      .bottom-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #0e1025;
+        border-top: 1px solid #444;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 60px;
+        z-index: 99;
+      }
+
+      .nav-item {
+        text-align: center;
+        font-size: 12px;
+        color: #aaa;
+      }
+
+      .nav-item.active {
+        color: #6366f1;
+      }
+
+      .nav-item i {
+        display: block;
+        font-size: 20px;
+        margin-bottom: 2px;
+      }
+
+      .upload-button {
+        background: #7c3aed;
+        color: white;
+        font-size: 24px;
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: -25px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      }
+
+      /* Desktop Sidebar Menu */
+      .nav-desktop-only {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Loading Screen -->
+    <div id="loading">
+      <div class="loader"></div>
+    </div>
+
+    <header>
+      <a href="freelancer.html" style="color: white"><i class="fas fa-arrow-left"></i></a>
+      <h1>UI/UX Design</h1>
+    </header>
+
+    <!-- Service Cards -->
+    <div class="service-card">
+      <img src="images/landing page.jpg" alt="Desain Antarmuka" />
+      <div class="service-info">
+        <h2>Desain Antarmuka & Pengalaman Pengguna</h2>
+        <p>Desain modern & responsif untuk aplikasi atau website kamu, lengkap dengan prototype interaktif dan user-flow analysis.</p>
+        <div class="price-time">
+          <span>Rp 400rb - 600rb</span>
+          <span>4 hari</span>
+        </div>
+        <a href="#" class="btn-pesan">Pesan Sekarang</a>
+      </div>
+    </div>
+
+    <!-- Bottom Navbar -->
+    <nav class="bottom-nav">
+      <a href="freelancer.html" class="nav-item" style="text-decoration: none"><i class="fas fa-home"></i>Beranda</a>
+      <div class="nav-item"><i class="fas fa-box"></i>Pesanan</div>
+      <div class="upload-button"><i class="fas fa-plus"></i></div>
+      <div class="nav-item"><i class="fas fa-wallet"></i>Dompet</div>
+      <a href="profil.html" class="nav-item active" style="text-decoration: none"><i class="fas fa-user"></i>Profil</a>
+    </nav>
+
+    <script>
+      // Loading Animation
+      window.addEventListener('load', function () {
+        const loader = document.getElementById('loading');
+        loader.style.display = 'none';
+      });
+    </script>
+  </body>
+</html>

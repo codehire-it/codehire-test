@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upgrade ke CodeHire Premium</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 20px;
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(180deg, #0d0d2b, #20204a);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      .container {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 16px;
+        padding: 20px;
+        backdrop-filter: blur(12px);
+        max-width: 400px;
+        margin: 70px auto 20px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+        position: relative;
+      }
+      .back-btn {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        color: white;
+        font-size: 22px;
+        text-decoration: none;
+      }
+      .back-btn i {
+        margin-right: 6px;
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 22px;
+        color: #facc15;
+      }
+      p {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 14px;
+        color: #ccc;
+      }
+      .selected-package {
+        background: #111827;
+        padding: 12px;
+        border-radius: 12px;
+        margin-bottom: 20px;
+        font-weight: bold;
+        text-align: center;
+      }
+      label {
+        display: block;
+        margin-top: 12px;
+        margin-bottom: 6px;
+        font-size: 14px;
+      }
+      select,
+      input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: none;
+        margin-bottom: 12px;
+        background: #1f2937;
+        color: white;
+      }
+      .btn-submit {
+        width: 100%;
+        padding: 12px;
+        background: linear-gradient(90deg, #6366f1, #8b5cf6);
+        border: none;
+        border-radius: 8px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.3s;
+      }
+      .btn-submit:hover {
+        background: linear-gradient(90deg, #7c3aed, #6366f1);
+        transform: scale(1.03);
+      }
+      .btn-loading {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        padding: 12px;
+        background: #4f46e5;
+        border: none;
+        border-radius: 8px;
+        color: white;
+        font-weight: bold;
+      }
+      .syarat {
+        text-align: center;
+        font-size: 12px;
+        margin-top: 16px;
+        color: #aaa;
+      }
+      .syarat a {
+        color: #6366f1;
+        text-decoration: none;
+      }
+      .bottom-space {
+        height: 80px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <a href="premium.html" class="back-btn"><i class="fas fa-arrow-left"></i> Kembali</a>
+
+    <div class="container">
+      <h1>Langganan CodeHire Premium</h1>
+      <p>Tinggal satu langkah lagi untuk menikmati semua fitur!</p>
+
+      <div id="package" class="selected-package">Freelancer Pro<br />Rp 50.000 / bulan</div>
+
+      <label for="metode">Pilih Metode Pembayaran</label>
+      <select id="metode">
+        <option>Bank Transfer (BRI, BCA, Mandiri)</option>
+        <option>OVO, DANA, GoPay</option>
+      </select>
+
+      <label for="nama">Nama Lengkap</label>
+      <input type="text" id="nama" placeholder="Nama Lengkap" />
+
+      <label for="email">Email (untuk konfirmasi)</label>
+      <input type="email" id="email" placeholder="Email" />
+
+      <button id="btnSubmit" class="btn-submit">Bayar & Langganan Sekarang</button>
+
+      <div id="loading" class="btn-loading">Loading...</div>
+
+      <p class="syarat">Dengan melanjutkan, Anda menyetujui <a href="#">syarat & ketentuan</a>.</p>
+    </div>
+
+    <div class="bottom-space"></div>
+
+    <script>
+      // Baca query string
+      const params = new URLSearchParams(window.location.search);
+      const paket = params.get('paket');
+      const packageDiv = document.getElementById('package');
+
+      if (paket === 'klien') {
+        packageDiv.innerHTML = 'Klien Elite<br/>Rp 75.000 / bulan';
+      } else {
+        packageDiv.innerHTML = 'Freelancer Pro<br/>Rp 50.000 / bulan';
+      }
+
+      // Handle Submit
+      const btnSubmit = document.getElementById('btnSubmit');
+      const loading = document.getElementById('loading');
+
+      btnSubmit.addEventListener('click', () => {
+        const nama = document.getElementById('nama').value.trim();
+        const email = document.getElementById('email').value.trim();
+
+        if (!nama || !email) {
+          alert('Nama dan Email harus diisi!');
+          return;
+        }
+
+        btnSubmit.style.display = 'none';
+        loading.style.display = 'flex';
+
+        setTimeout(() => {
+          // Setelah loading 2 detik, langsung redirect ke success.html
+          window.location.href = 'success.html';
+        }, 2000);
+      });
+    </script>
+  </body>
+</html>

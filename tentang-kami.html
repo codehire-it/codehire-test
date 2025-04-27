@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Tentang CodeHire</title>
+    <style>
+      body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to bottom right, #4e54c8, #8f94fb);
+        color: white;
+      }
+      header {
+        background: transparent;
+        padding: 30px;
+      }
+
+      main {
+        padding: 40px 20px;
+        text-align: center;
+        animation: fadeIn 1s ease forwards;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+        font-weight: 700;
+      }
+
+      p {
+        margin-top: 20px;
+        line-height: 1.8;
+        font-size: 18px;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        color: #f0f0f0;
+      }
+
+      .gallery {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 0 20px;
+      }
+
+      .gallery img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 15px;
+        transition: transform 0.4s, box-shadow 0.4s;
+      }
+
+      .gallery img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      }
+
+      .download-button {
+        display: inline-block;
+        margin-top: 40px;
+        background-color: #ff6b6b;
+        color: white;
+        padding: 14px 30px;
+        font-size: 18px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+      }
+
+      .download-button:hover {
+        background-color: #ff4757;
+      }
+
+      /* Responsive */
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 28px;
+        }
+        p {
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="toggle"></div>
+      <div class="navigation">
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="tentang-kami.html">Tentang Kami</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="social-bar">
+          <ul>
+            <li>
+              <a href="https://facebook.com">
+                <img src="images/facebook.png" target="_blank" alt="" />
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com">
+                <img src="images/twitter.png" target="_blank" alt="" />
+              </a>
+            </li>
+            <li>
+              <a href="https://instagram.com">
+                <img src="images/instagram.png" target="_blank" alt="" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <h1>Tentang CodeHire</h1>
+      <p>
+        CodeHire adalah marketplace freelance IT terpercaya di Indonesia yang menghubungkan talenta terbaik dengan berbagai perusahaan dan proyek digital. Kami berkomitmen memberikan layanan yang profesional, aman, dan efisien untuk
+        membantu pengembangan teknologi bisnis Anda. Dengan CodeHire, Anda bisa menemukan developer, designer, hingga IT consultant berkualitas dalam satu platform!
+      </p>
+
+      <div class="gallery">
+        <img src="images/170shots_so.png" alt="Freelance 1" />
+      </div>
+
+      <a href="images/Flyer CodeHire.jpg" download class="download-button"> <i class="fas fa-download"></i> Download Flyer </a>
+    </main>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

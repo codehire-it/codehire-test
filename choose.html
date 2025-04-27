@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pilih Peran Anda - CodeHire</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Arial', sans-serif;
+      }
+
+      body,
+      html {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: url('images/bg.webp') no-repeat center center fixed;
+        background-size: cover;
+        position: relative;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 1;
+      }
+
+      .container {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        color: white;
+        padding: 20px;
+        max-width: 90%;
+        margin: auto;
+      }
+
+      h1 {
+        font-size: 2em;
+        margin-bottom: 0.5em;
+      }
+
+      p {
+        margin-bottom: 2em;
+      }
+
+      .role-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+        flex-wrap: wrap;
+        flex-direction: row;
+      }
+
+      .role-button {
+        width: 140px;
+        height: 140px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #3b82f6, #6366f1);
+        border-radius: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 1em;
+        cursor: pointer;
+        text-decoration: none;
+        transition: transform 0.2s;
+      }
+
+      .role-button.klien {
+        background: linear-gradient(135deg, #ec4899, #8b5cf6);
+      }
+
+      .role-button:hover {
+        transform: scale(1.05);
+      }
+
+      .role-button img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+      }
+
+      .freelancer img {
+        width: 80px;
+        height: auto;
+      }
+
+      @media (max-width: 768px) {
+        section.home {
+          flex-direction: column; /* tumpuk ke bawah */
+          padding: 40px 20px;
+          height: auto;
+        }
+
+        .home-img,
+        .home-content {
+          width: 100%;
+        }
+
+        .home-img {
+          order: -1; /* opsional: agar gambar di atas teks */
+          height: 250px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="overlay"></div>
+    <div class="container">
+      <h1>Pilih Peran Anda</h1>
+      <p>Untuk memulai, silahkan pilih peran Anda di platform CodeHire.</p>
+      <div class="role-buttons">
+        <a href="freelancer.html" class="role-button freelancer">
+          <img src="images/Group (1).png" alt="Freelancer" />
+          Freelancer
+        </a>
+        <a href="klien.html" class="role-button klien">
+          <img src="images/Group.png" alt="Klien" />
+          Klien
+        </a>
+      </div>
+    </div>
+  </body>
+</html>

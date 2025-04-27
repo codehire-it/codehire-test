@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Pemesanan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(180deg, #0d0d2b, #20204a);
+        color: white;
+        padding: 20px;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+      header i {
+        font-size: 24px;
+        cursor: pointer;
+      }
+      header h1 {
+        font-size: 22px;
+      }
+      .form-group {
+        margin-bottom: 16px;
+      }
+      .form-group label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: bold;
+      }
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: none;
+        background: #1f2937;
+        color: white;
+        font-size: 14px;
+      }
+      .form-group textarea {
+        resize: vertical;
+        min-height: 80px;
+      }
+      .btn-submit {
+        background: linear-gradient(90deg, #6366f1, #8b5cf6);
+        color: white;
+        padding: 12px;
+        border: none;
+        width: 100%;
+        border-radius: 8px;
+        font-weight: bold;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      .btn-submit:hover {
+        background: linear-gradient(90deg, #7c3aed, #6366f1);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="javascript:history.back()" style="color: white"><i class="fas fa-arrow-left"></i></a>
+      <h1>Layanan yang Anda pesan</h1>
+    </header>
+
+    <form id="order-form">
+      <div class="form-group">
+        <label for="judul">Judul Layanan</label>
+        <input type="text" id="judul" name="judul" readonly />
+      </div>
+      <div class="form-group">
+        <label for="deskripsi">Deskripsi</label>
+        <textarea id="deskripsi" name="deskripsi" readonly></textarea>
+      </div>
+      <div class="form-group">
+        <label for="harga">Harga</label>
+        <input type="text" id="harga" name="harga" readonly />
+      </div>
+      <div class="form-group">
+        <label for="estimasi">Estimasi Waktu</label>
+        <input type="text" id="estimasi" name="estimasi" readonly />
+      </div>
+      <div class="form-group">
+        <label for="nama">Nama Pemesan</label>
+        <input type="text" id="nama" name="nama" required />
+      </div>
+      <div class="form-group">
+        <label for="whatsapp">Nomor WhatsApp</label>
+        <input type="text" id="whatsapp" name="whatsapp" required />
+      </div>
+      <div class="form-group">
+        <label for="catatan">Catatan Tambahan</label>
+        <textarea id="catatan" name="catatan"></textarea>
+      </div>
+      <button type="submit" class="btn-submit">Konfirmasi Pemesanan</button>
+    </form>
+
+    <script>
+      // Ambil data dari URL
+      const params = new URLSearchParams(window.location.search);
+      document.getElementById('judul').value = params.get('judul') || '';
+      document.getElementById('deskripsi').value = params.get('deskripsi') || '';
+      document.getElementById('harga').value = params.get('harga') || '';
+      document.getElementById('estimasi').value = params.get('estimasi') || '';
+
+      // Submit form ke WhatsApp
+      document.getElementById('order-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const judul = document.getElementById('judul').value;
+        const deskripsi = document.getElementById('deskripsi').value;
+        const harga = document.getElementById('harga').value;
+        const estimasi = document.getElementById('estimasi').value;
+        const nama = document.getElementById('nama').value;
+        const whatsapp = document.getElementById('whatsapp').value;
+        const catatan = document.getElementById('catatan').value;
+
+        const message = `Halo, saya ingin memesan layanan:
+
+*${judul}*
+Deskripsi: ${deskripsi}
+Harga: ${harga}
+Estimasi: ${estimasi}
+
+Nama: ${nama}
+No. WhatsApp: ${whatsapp}
+Catatan: ${catatan}`;
+
+        const encodedMessage = encodeURIComponent(message);
+        const waNumber = '62895322714966'; // Nomor ADMIN
+
+        window.open(`https://wa.me/${waNumber}?text=${encodedMessage}`, '_blank');
+      });
+    </script>
+  </body>
+</html>

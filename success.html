@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upgrade Berhasil!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 20px;
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(180deg, #0d0d2b, #20204a);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
+      }
+
+      .success-icon {
+        font-size: 80px;
+        color: #22c55e;
+        margin-bottom: 20px;
+        animation: pop 0.6s ease;
+      }
+
+      @keyframes pop {
+        0% {
+          transform: scale(0);
+          opacity: 0;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #facc15;
+      }
+
+      p {
+        font-size: 16px;
+        color: #ccc;
+        margin-bottom: 30px;
+      }
+
+      .btn-home {
+        background: linear-gradient(90deg, #6366f1, #8b5cf6);
+        padding: 12px 24px;
+        border: none;
+        border-radius: 8px;
+        color: white;
+        font-weight: bold;
+        font-size: 16px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background 0.3s, transform 0.3s;
+      }
+
+      .btn-home:hover {
+        background: linear-gradient(90deg, #7c3aed, #6366f1);
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+
+  <body>
+    <i class="fas fa-check-circle success-icon"></i>
+
+    <h1>Berhasil!</h1>
+    <p>Terima kasih telah upgrade ke <strong>CodeHire Premium</strong>.<br />Admin kami akan segera memproses langganan Anda.</p>
+
+    <a href="freelancer.html" class="btn-home">Kembali ke Beranda</a>
+  </body>
+</html>
